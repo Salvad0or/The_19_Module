@@ -1,5 +1,8 @@
 ﻿namespace _19Module.Domain.Person
 {
+    /// <summary>
+    /// Базовый интерфейс для всех персон
+    /// </summary>
     public interface IPerson
     {
         public int Id { get; }

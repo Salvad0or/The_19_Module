@@ -7,6 +7,9 @@ using The19Module.DAL.Interfaces;
 
 namespace _The19Module.Services.PerconServices
 {
+    /// <summary>
+    /// Конечный сервис получения клиентов 
+    /// </summary>
     public class PersonService : IPersonService
     {
         private readonly IPersonRepository personRepository;

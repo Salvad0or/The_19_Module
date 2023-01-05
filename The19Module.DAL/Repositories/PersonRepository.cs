@@ -1,8 +1,12 @@
-﻿using _19Module.Domain.Person;
+﻿using _19Module.Domain.PersonClasses;
 using The19Module.DAL.Interfaces;
 
 namespace The19Module.DAL.Repositories
 {
+
+    /// <summary>
+    /// Реализация получения персон
+    /// </summary>
     public class PersonRepository : IPersonRepository
     {
         public IEnumerable<Person> GetAllPersons()
@@ -28,6 +32,16 @@ namespace The19Module.DAL.Repositories
 
             return person;
 
+        }
+
+        IEnumerable<Person> IPersonRepository.GetAllPersons()
+        {
+            throw new NotImplementedException();
+        }
+
+        Person IPersonRepository.GetPersonById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

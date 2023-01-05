@@ -2,6 +2,10 @@
 
 namespace _19Module.Domain.Interfaces
 {
+    /// <summary>
+    /// Базовый интерфейс для релазации ответа от сервисов
+    /// </summary>
+    /// <typeparam name="T">Данные которые вернет сервер</typeparam>
     public interface IBaseResponce<T>
     {
         T Data { get; set; }

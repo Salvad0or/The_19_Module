@@ -3,7 +3,9 @@ using _19Module.Domain.PersonClasses;
 using Microsoft.EntityFrameworkCore;
 
 namespace The19Module.DAL;
-
+/// <summary>
+/// Основной класс доступа к бд
+/// </summary>
 public partial class The19ModuleContext : DbContext
 {
     public The19ModuleContext()
