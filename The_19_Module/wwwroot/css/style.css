@@ -3,9 +3,11 @@ a{
     text-decoration: none;
 }
 
-a:hover{
-    color:red;
-}
+    a:hover {
+        color: #FF0000
+    }
+
+   
 
 .container{
     max-width: 1280px;
