@@ -1,4 +1,5 @@
 ﻿using _19Module.Domain.Person;
+using _19Module.Domain.PersonClasses;
 using Microsoft.EntityFrameworkCore;
 
 namespace The19Module.DAL;

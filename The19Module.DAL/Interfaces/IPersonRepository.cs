@@ -1,9 +1,4 @@
-﻿using _19Module.Domain.Person;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using _19Module.Domain.PersonClasses;
 
 namespace The19Module.DAL.Interfaces
 {

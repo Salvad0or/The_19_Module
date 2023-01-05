@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.SqlServer;
 using The19Module.DAL;
+using The19Module.DAL.Interfaces;
+using The19Module.DAL.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
