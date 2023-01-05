@@ -1,5 +1,42 @@
-﻿@{
+﻿@model IBaseResponce<IEnumerable<Person>>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 
+
+
+<div class="container">
+
+   
+        <div class="body_table_text">
+            <img class="phone_img" src="~/images/phone.png">
+            <h3 class="body_table_h1">Телефонная книга</h3>
+        </div>
+        <div class="body_table">
+            <table class="main_table">
+                <tr>
+                    <th class="main_table_th">Id</th>
+                    <th class="main_table_th">Фамилия</th>
+                    <th class="main_table_th">Имя</th>
+                    <th class="main_table_th">Отчество</th>
+                </tr>
+                
+
+
+                @foreach (var Person in Model.Data)
+            {
+                <tr>
+                    <td class="main_table_data">
+                        <a href="">#@Person.Id</a>
+                    </td>
+                    <td class="main_table_data">@Person.SecondName</td>
+                    <td class="main_table_data">@Person.Name</td>
+                    <td class="main_table_data">@Person.Patronymic</td>
+                </tr>
+            }
+
+            </table>
+        </div>
+</div>

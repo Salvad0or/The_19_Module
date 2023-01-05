@@ -1,3 +1,5 @@
+using _The19Module.Services.Interfaces;
+using _The19Module.Services.PerconServices;
 using Microsoft.EntityFrameworkCore;
 using The19Module.DAL;
 using The19Module.DAL.Interfaces;
@@ -10,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IPersonService, PersonService>();
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 

@@ -1,4 +1,5 @@
 ﻿using _19Module.Domain.PersonClasses;
+using Microsoft.EntityFrameworkCore;
 using The19Module.DAL.Interfaces;
 
 namespace The19Module.DAL.Repositories
@@ -9,14 +10,22 @@ namespace The19Module.DAL.Repositories
     /// </summary>
     public class PersonRepository : IPersonRepository
     {
+        private readonly The19ModuleContext _dbContext;
+
+
+        public PersonRepository(The19ModuleContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public IEnumerable<Person> GetAllPersons()
         {
             List<Person> persons = new List<Person>();
 
-            using (The19ModuleContext dbContext = new The19ModuleContext())
-            {
-                persons = dbContext.People.ToList();
-            }
+            
+            persons = _dbContext.People.ToList();
+            _dbContext.Dispose();
+
 
             return persons;
         }
@@ -25,23 +34,15 @@ namespace The19Module.DAL.Repositories
         {
             Person person = new Person();
 
-            using (The19ModuleContext dbContext = new The19ModuleContext())
+            using (The19ModuleContext _dbContext = new The19ModuleContext())
             {
-                person = dbContext.People.Single(i => i.Id == id);
+                person = _dbContext.People.Single(i => i.Id == id);
             }
 
             return person;
 
         }
 
-        IEnumerable<Person> IPersonRepository.GetAllPersons()
-        {
-            throw new NotImplementedException();
-        }
-
-        Person IPersonRepository.GetPersonById(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

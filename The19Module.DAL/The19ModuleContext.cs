@@ -1,6 +1,7 @@
 ﻿using _19Module.Domain.Person;
 using _19Module.Domain.PersonClasses;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace The19Module.DAL;
 /// <summary>
@@ -15,6 +16,11 @@ public partial class The19ModuleContext : DbContext
     public The19ModuleContext(DbContextOptions<The19ModuleContext> options)
         : base(options)
     {
+    }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        
     }
 
     public virtual DbSet<Person> People { get; set; }

@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\19Module.Domain\19Module.Domain.csproj" />
+    <ProjectReference Include="..\The19Module.DAL\The19Module.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
