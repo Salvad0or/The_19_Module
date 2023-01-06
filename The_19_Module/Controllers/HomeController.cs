@@ -18,6 +18,7 @@ namespace The_19_Module.Controllers
             _logger = logger;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var result = _personService.GetAllPersons();

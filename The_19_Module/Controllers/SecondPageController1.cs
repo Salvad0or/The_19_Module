@@ -15,6 +15,7 @@ namespace The_19_Module.Controllers
             _personService = personService;
         }
 
+        [HttpGet]
         public IActionResult Index(int id)
         {
             IBaseResponce<Person> result = _personService.GetPersonById(id);
