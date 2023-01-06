@@ -1,0 +1,47 @@
+﻿@model IBaseResponce<Person> 
+@{
+    ViewData["Title"] = "Personal by Id";
+}
+
+
+<div class="container">
+
+    <div class="second-page">
+
+        <div class="second-page-descriprion">
+            <label class="second-page-descriprion-label">
+                Полная информация по юзеру : @Model.Data.Name
+            </label>
+        </div>
+
+        <div class="second-table-row">
+            <table class="second-table">
+            <tr class="second-table-tr">
+                <th class="second-table-th">Id</th>
+                <th class="second-table-th">Фамилия</th>
+                <th class="second-table-th">Отчество</th>
+                <th class="second-table-th">Номер телефона</th>
+                <th class="second-table-th">Адрес проживания</th>
+                <th class="second-table-th">Описание</th>
+            </tr>
+
+            <tr class="second-table-tr">
+                <td class="second-table-td">@Model.Data.Id</td>
+                <td class="second-table-td">@Model.Data.SecondName</td>
+                <td class="second-table-td">@Model.Data.Patronymic</td>
+                <td class="second-table-td">@Model.Data.PhoneNumber</td>
+                <td class="second-table-td">@Model.Data.Adress</td>
+                <td class="second-table-td">@Model.Data.Description</td>
+            </tr>
+
+        </table>
+        </div>
+
+
+        
+    </div>
+</div>
+
+
+
+

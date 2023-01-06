@@ -32,12 +32,10 @@ namespace The19Module.DAL.Repositories
 
         public Person GetPersonById(int id)
         {
-            Person person = new Person();
 
-            using (The19ModuleContext _dbContext = new The19ModuleContext())
-            {
-                person = _dbContext.People.Single(i => i.Id == id);
-            }
+            var person = _dbContext.People.Single(i => i.Id == id);
+
+            _dbContext.Dispose();
 
             return person;
 

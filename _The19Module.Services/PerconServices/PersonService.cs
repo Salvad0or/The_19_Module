@@ -50,7 +50,7 @@ namespace _The19Module.Services.PerconServices
             catch (Exception ex)
             {
 
-                responce.CodeError = StatusCode.SomeError;
+                responce.CodeError = StatusCode.PersonNotFound;
                 responce.Description = $"[GetPersonById] - {ex.Message}";
             }
 
