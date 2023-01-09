@@ -2,7 +2,9 @@
 using _19Module.Domain.Interfaces;
 using _19Module.Domain.PersonClasses;
 using _19Module.Domain.Responce;
+using _19Module.Domain.ViewModels;
 using _The19Module.Services.Interfaces;
+using Azure;
 using The19Module.DAL.Interfaces;
 
 namespace _The19Module.Services.PerconServices
@@ -51,6 +53,24 @@ namespace _The19Module.Services.PerconServices
             {
 
                 responce.CodeError = StatusCode.PersonNotFound;
+                responce.Description = $"[GetPersonById] - {ex.Message}";
+            }
+
+            return responce;
+        }
+
+        public IBaseResponce<bool> AddNewPerson(PersonViewModel viewModel)
+        {
+            Responce<bool> responce = new Responce<bool>();
+
+            try
+            {
+                responce.Data = personRepository.Add(viewModel);
+            }
+            catch (Exception ex)
+            {
+
+                responce.CodeError = StatusCode.ICantAddPerson;
                 responce.Description = $"[GetPersonById] - {ex.Message}";
             }
 

@@ -1,0 +1,35 @@
+﻿@model PersonViewModel
+
+@{
+    ViewData["Title"] = "AddANewUser";
+}
+
+<div class="container">
+    <div class="registrational_panel">
+        <form asp-action="AddNewPerson" asp-controller="Person" class="registrational_panel_form">
+            <fieldset class="registrational_panel_form_field">
+                <legend>Анкета нового человека</legend>
+                <div class="registrational_panel_inside">
+                    <div class="registrational_panel_inside_text">
+                        <p class="registrational_panel_inside_input_text"><label input asp-for="Name">Имя</label> </p>
+                        <p class="registrational_panel_inside_input_text"><label asp-for="SecondName">Фамилия</label> </p>
+                        <p class="registrational_panel_inside_input_text"><label asp-for="Patronymic">Отчество</label> </p>
+                        <p class="registrational_panel_inside_input_text"><label asp-for="PhoneNumber">Телефон</label> </p>
+                        <p class="registrational_panel_inside_input_text"><label asp-for="Adress">Адрес</label> </p>
+                    </div>
+                    <div class="registrational_panel_inside_input">
+                        <p><input asp-for="Name" class="registrational_panel_inside_input_form" type="text"></p>
+                        <p><input asp-for="SecondName" input class="registrational_panel_inside_input_form" type="text"></p>
+                        <p><input asp-for="Patronymic" class="registrational_panel_inside_input_form" type="text"></p>
+                        <p><input asp-for="PhoneNumber" class="registrational_panel_inside_input_form" type="text"></p>
+                        <p><input asp-for="Adress" class="registrational_panel_inside_input_form" type="text"></p>
+                    </div>
+                </div>
+                <button class="registrational_panel_button">Отправить</button>
+            </fieldset>
+
+
+            <div asp-validation-summary="All"></div>
+        </form>
+    </div>
+</div>

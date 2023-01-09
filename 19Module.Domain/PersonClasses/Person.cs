@@ -1,4 +1,5 @@
 ﻿using _19Module.Domain.Person;
+using System.ComponentModel.DataAnnotations;
 
 namespace _19Module.Domain.PersonClasses
 {
@@ -7,18 +8,19 @@ namespace _19Module.Domain.PersonClasses
     /// </summary>
     public class Person : IPerson
     {
-        public int Id { get; }
+        [Key]
+        public int Id { get; set; }
 
-        public string? Name { get; }
+        public string? Name { get; set; }
 
-        public string? SecondName { get; }
+        public string? SecondName { get; set; }
 
-        public string? Patronymic { get; }
+        public string? Patronymic { get; set; }
 
-        public string? PhoneNumber { get; }
+        public string? PhoneNumber { get; set; }
 
-        public string? Adress { get; }
+        public string? Adress { get; set; }
 
-        public string? Description { get; }
+        public string? Description { get; set; }
     }
 }

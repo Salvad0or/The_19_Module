@@ -1,16 +1,14 @@
 ﻿using _The19Module.Services.Interfaces;
-using _The19Module.Services.PerconServices;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using The_19_Module.Models;
-using _19Module.Domain.Enums;
 
 namespace The_19_Module.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-       
+
 
         public HomeController(ILogger<HomeController> logger, IPersonService personService)
         {

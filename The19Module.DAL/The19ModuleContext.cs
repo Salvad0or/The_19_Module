@@ -33,7 +33,6 @@ public partial class The19ModuleContext : DbContext
         modelBuilder.Entity<Person>(entity =>
         {
             entity
-                .HasNoKey()
                 .ToTable("Person");
 
             entity.Property(e => e.Adress).HasMaxLength(50);

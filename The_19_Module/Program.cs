@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IPersonService, PersonService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 

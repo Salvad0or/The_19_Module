@@ -1,4 +1,5 @@
 ﻿using _19Module.Domain.PersonClasses;
+using _19Module.Domain.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using The19Module.DAL.Interfaces;
 
@@ -41,6 +42,29 @@ namespace The19Module.DAL.Repositories
 
         }
 
-       
+        public bool Add(PersonViewModel personViewModel)
+        {
+            Person person = new Person()
+            {
+                Name = personViewModel.Name,
+                SecondName = personViewModel.SecondName,
+                Patronymic = personViewModel.Patronymic,
+                Adress = personViewModel.Adress,
+                PhoneNumber = personViewModel.PhoneNumber,
+            };
+
+            try
+            {
+                _dbContext.Add(person);
+                _dbContext.SaveChanges();
+                _dbContext.Dispose();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }
