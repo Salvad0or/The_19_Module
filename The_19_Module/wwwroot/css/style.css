@@ -178,3 +178,18 @@ a{
     color: #fff;
     font-weight: 600;
 }
+
+.asp-validation-add-client {
+    margin-top: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    
+}
+
+.ul_error{
+    list-style:none;
+}
+
+.input-validation-error {
+    background-color: orangered;
+}

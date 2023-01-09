@@ -23,6 +23,8 @@ namespace The_19_Module.Controllers
         }
 
 
+        #region Реализация добавления нового клиента
+
         [HttpGet]
         public IActionResult AddNewPerson() => View();
 
@@ -42,5 +44,7 @@ namespace The_19_Module.Controllers
             return View();
 
         }
+
+        #endregion
     }
 }
