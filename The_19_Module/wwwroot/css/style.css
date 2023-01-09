@@ -131,3 +131,50 @@ a{
 .second-table-tr:hover td {
     background: #e8edff;
 }
+
+.registrational_panel {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.registrational_panel_form_field {
+    border-radius: 5px;
+    padding: 25px;
+    max-width: 30%;
+    border: 1px solid gray;
+}
+
+.registrational_panel_inside {
+    display: flex;
+}
+
+.registrational_panel_inside_input {
+    padding-left: 20px;
+    padding-top: 2px;
+}
+
+.registrational_panel_inside_input_text {
+    padding-top: 4px;
+}
+
+.registrational_panel_inside_input_form {
+    border-radius: 5px;
+    border: 1px solid gray;
+    transition: .3s linear
+}
+
+    .registrational_panel_inside_input_form:hover {
+        background-color: lightgray;
+    }
+
+.registrational_panel_button {
+    padding: 5px;
+    margin-top: 14px;
+    background-color: gray;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+}
