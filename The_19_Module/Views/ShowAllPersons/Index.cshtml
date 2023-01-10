@@ -21,6 +21,7 @@
                 <th class="main_table_th">Фамилия</th>
                 <th class="main_table_th">Имя</th>
                 <th class="main_table_th">Отчество</th>
+
             </tr>
 
             @foreach (var Person in Model.Data)
@@ -32,6 +33,9 @@
                     <td class="main_table_data">@Person.SecondName</td>
                     <td class="main_table_data">@Person.Name</td>
                     <td class="main_table_data">@Person.Patronymic</td>
+                    <td>
+                        <a asp-controller="Person" asp-action="EditPerson" asp-route-id="@Person.Id">Редактировать</a>
+                    </td>
 
                 </tr>
             }

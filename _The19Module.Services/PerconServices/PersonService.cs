@@ -54,7 +54,7 @@ namespace _The19Module.Services.PerconServices
 
             try
             {
-                responce.Data = personRepository.GetPersonById(id);
+                responce.Data = personRepository.GetById(id);
                 responce.CodeError = StatusCode.Ok;
             }
             catch (Exception ex)

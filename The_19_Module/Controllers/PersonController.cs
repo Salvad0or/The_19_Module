@@ -46,5 +46,25 @@ namespace The_19_Module.Controllers
         }
 
         #endregion
+
+
+        #region Реализация редактирования старого клиента
+
+        //[HttpGet]
+        //public IActionResult EditPerson(int id)
+        //{ 
+        
+        //}
+
+        [HttpPost]
+        public IActionResult EditPerson(PersonViewModel personViewModel)
+        {
+
+
+            return View();
+        }
+
+
+        #endregion
     }
 }

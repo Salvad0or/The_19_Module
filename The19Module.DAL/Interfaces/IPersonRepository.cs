@@ -6,11 +6,11 @@ namespace The19Module.DAL.Interfaces
     /// <summary>
     /// Стандартный интерфейс репозитория для клиента
     /// </summary>
-    public interface IPersonRepository 
+    public interface IPersonRepository :IBaseRepository<Person>
     {
         IEnumerable<Person> GetAllPersons();
 
-        Person GetPersonById(int id);
+        Person GetById(int id);
 
         bool Add(PersonViewModel personViewModel);
 

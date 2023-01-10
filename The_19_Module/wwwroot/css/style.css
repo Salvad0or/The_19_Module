@@ -193,3 +193,50 @@ a{
 .input-validation-error {
     background-color: orangered;
 }
+
+.edit_panel_form_row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.edit_panel_form_p {
+    margin: 1px;
+}
+
+.edit_panel_form {
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+
+.edit_panel_form_input {
+    border: none;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px 1px gray;
+    transition: .15s linear;
+}
+
+.edit_panel_form_data {
+    margin-top: 8px;
+}
+
+.edit_panel_form_input:hover {
+    background-color: lightgray;
+}
+
+.edit_panel_form_button {
+    background-color: lightgray;
+    border-radius: 3px;
+    transition: .15s linear;
+    padding: 5px;
+    margin-top: 15px;
+    border: 1px solid black;
+}
+
+    .edit_panel_form_button:hover {
+        background-color: gray;
+    }
+

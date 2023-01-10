@@ -31,7 +31,7 @@ namespace The19Module.DAL.Repositories
             return persons;
         }
 
-        public Person GetPersonById(int id)
+        public Person GetById(int id)
         {
 
             var person = _dbContext.People.Single(i => i.Id == id);
@@ -71,6 +71,7 @@ namespace The19Module.DAL.Repositories
         {
             try
             {
+
                 Person person = _dbContext.People.Single(i => i.Id == personViewModel.Id);
 
                 person.Adress = personViewModel.Adress;
@@ -88,6 +89,11 @@ namespace The19Module.DAL.Repositories
 
                 return false;
             }
+        }
+
+        public Person GetById(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
