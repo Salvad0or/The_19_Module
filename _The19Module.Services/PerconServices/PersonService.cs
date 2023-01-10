@@ -21,7 +21,10 @@ namespace _The19Module.Services.PerconServices
             personRepository = _personRepository;
         }
 
-
+        /// <summary>
+        /// Получение списка всех клиентов
+        /// </summary>
+        /// <returns></returns>
         public IBaseResponce<IEnumerable<Person>> GetAllPersons()
         {
             Responce<IEnumerable<Person>> responce = new Responce<IEnumerable<Person>>();
@@ -40,6 +43,11 @@ namespace _The19Module.Services.PerconServices
             return responce;
         }
 
+        /// <summary>
+        /// Получить клиента по id из общей таблицы
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IBaseResponce<Person> GetPersonById(int id)
         {
             Responce<Person> responce = new Responce<Person>();
@@ -59,6 +67,11 @@ namespace _The19Module.Services.PerconServices
             return responce;
         }
 
+        /// <summary>
+        /// Добавить нового человека
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
         public IBaseResponce<bool> AddNewPerson(PersonViewModel viewModel)
         {
             Responce<bool> responce = new Responce<bool>();
@@ -75,6 +88,31 @@ namespace _The19Module.Services.PerconServices
             }
 
             return responce;
+        }
+
+        /// <summary>
+        /// Редактировать нового человека
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public IBaseResponce<bool> EditPerson(PersonViewModel viewModel)
+        {
+            IBaseResponce<bool> baseResponce = new Responce<bool>();
+
+            try
+            {
+                baseResponce.Data = personRepository.Edit(viewModel);
+                baseResponce.Description = $"Редактирование прошло успешно";
+            }
+            catch (Exception ex)
+            {
+
+                baseResponce.CodeError = StatusCode.CantEditPerson;
+                baseResponce.Description = $"[EditPerson] - {ex.Message}";
+            }
+
+            return baseResponce;
         }
     }
 }

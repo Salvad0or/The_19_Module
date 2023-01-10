@@ -66,5 +66,28 @@ namespace The19Module.DAL.Repositories
                 return false;
             }
         }
+
+        public bool Edit(PersonViewModel personViewModel)
+        {
+            try
+            {
+                Person person = _dbContext.People.Single(i => i.Id == personViewModel.Id);
+
+                person.Adress = personViewModel.Adress;
+                person.Patronymic = personViewModel.Patronymic;
+                person.PhoneNumber = personViewModel.PhoneNumber;
+                person.SecondName = personViewModel.SecondName;
+                person.Adress = personViewModel.Adress;
+
+                _dbContext.SaveChanges();
+                _dbContext.Dispose();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }

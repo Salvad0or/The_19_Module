@@ -13,5 +13,9 @@ namespace The19Module.DAL.Interfaces
         Person GetPersonById(int id);
 
         bool Add(PersonViewModel personViewModel);
+
+        bool Edit(PersonViewModel personViewModel);
+
+
     }
 }
