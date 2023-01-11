@@ -1,4 +1,5 @@
 ﻿using _19Module.Domain.PersonClasses;
+using _19Module.Domain.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,29 @@ namespace The19Module.DAL.Repositories
             _dbConnext = dbConnext;
         }
 
-        public Person GetById(int id)
+        public PersonViewModel GetById(int id)
         {
-            throw new NotImplementedException();
+            PersonViewModel personViewModel = new PersonViewModel();
+
+            try
+            {
+                var Person = _dbConnext.People.Single(i => i.Id == id);
+
+                personViewModel.Id = Person.Id;
+                personViewModel.Name = Person.Name;
+                personViewModel.SecondName = Person.SecondName;
+                personViewModel.Patronymic = Person.Patronymic;
+                personViewModel.PhoneNumber = Person.PhoneNumber;
+                personViewModel.Adress = Person.Adress;
+
+                return personViewModel;
+
+            }
+            catch (Exception ex)
+            {
+
+                return personViewModel;
+            }
         }
     }
 }

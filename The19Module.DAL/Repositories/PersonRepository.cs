@@ -71,10 +71,10 @@ namespace The19Module.DAL.Repositories
         {
             try
             {
-
                 Person person = _dbContext.People.Single(i => i.Id == personViewModel.Id);
 
-                person.Adress = personViewModel.Adress;
+
+                person.Name = personViewModel.Name;
                 person.Patronymic = personViewModel.Patronymic;
                 person.PhoneNumber = personViewModel.PhoneNumber;
                 person.SecondName = personViewModel.SecondName;
@@ -91,9 +91,6 @@ namespace The19Module.DAL.Repositories
             }
         }
 
-        public Person GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
+     
     }
 }

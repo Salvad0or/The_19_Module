@@ -1,32 +1,41 @@
-﻿
+﻿@model PersonViewModel
+
 @{
     
 }
 
 <div class="container">
     <div class="edit_panel_form_row">
-        <form action="#" class="edit_panel_form">
+        <form asp-action="EditPerson" asp-controller="Person" class="edit_panel_form">
+
+            <div class="edit_panel_form_data">
+                <p class="edit_panel_form_p">Id</p>
+                <input class="edit_panel_form_input" type="text" readonly asp-for="Id" value="@Model.Id">
+            </div>
             <div class="edit_panel_form_data">
                 <p class="edit_panel_form_p">Имя</p>
-                <input class="edit_panel_form_input" type="text">
+                <input class="edit_panel_form_input" type="text" value="@Model.Name" asp-for="Name">
             </div>
             <div class="edit_panel_form_data">
                 <p class="edit_panel_form_p">Фамилия</p>
-                <input class="edit_panel_form_input" type="text">
+                <input class="edit_panel_form_input" type="text" value="@Model.SecondName" asp-for="SecondName">
             </div>
             <div class="edit_panel_form_data">
                 <p class="edit_panel_form_p">Отчество</p>
-                <input class="edit_panel_form_input" type="text">
+                <input class="edit_panel_form_input" type="text" value="@Model.Patronymic" asp-for="Patronymic">
             </div>
             <div class="edit_panel_form_data">
                 <p class="edit_panel_form_p">Телефон</p>
-                <input class="edit_panel_form_input" type="text">
+                <input class="edit_panel_form_input" type="text" value="@Model.PhoneNumber" asp-for="PhoneNumber">
             </div>
             <div class="edit_panel_form_data">
                 <p class="edit_panel_form_p">Адрес</p>
-                <input class="edit_panel_form_input" type="text">
+                <input class="edit_panel_form_input" type="text" value="@Model.Adress" asp-for="Adress">
             </div>
+
             <button type="submit" class="edit_panel_form_button">Редактировать</button>
+
+            <div asp-validation-summary="All" class="asp-validation-add-client"></div>
 
 
         </form>
