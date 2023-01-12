@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace The19Module.DAL.Interfaces
+﻿namespace The19Module.DAL.Interfaces
 {
+    /// <summary>
+    /// Главный интерфейс для любого репозитория
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IBaseRepository<T>
     {
         T GetById(int id);

@@ -6,6 +6,9 @@ using The19Module.DAL.Interfaces;
 
 namespace _The19Module.Services.ViewPersonServices
 {
+    /// <summary>
+    /// Сервис для работы и обработки класса PersonView
+    /// </summary>
     public class PersonViewService : IPersonViewService
     {
         private readonly IPersonViewRepository _personViewRepository;
@@ -15,6 +18,11 @@ namespace _The19Module.Services.ViewPersonServices
             _personViewRepository = personViewRepository;
         }
 
+        /// <summary>
+        /// Переливаем обычного Person в ViewPerson
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public IBaseResponce<PersonViewModel> GetViewPersonById(int id)
         {
 

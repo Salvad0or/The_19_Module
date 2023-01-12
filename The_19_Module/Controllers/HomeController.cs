@@ -9,7 +9,6 @@ namespace The_19_Module.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-
         public HomeController(ILogger<HomeController> logger, IPersonService personService)
         {
             _logger = logger;

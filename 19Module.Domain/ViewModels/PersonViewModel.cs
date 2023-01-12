@@ -3,6 +3,9 @@
 
 namespace _19Module.Domain.ViewModels
 {
+    /// <summary>
+    /// Класс Вью-Модели для Person. 
+    /// </summary>
     public class PersonViewModel
     {
 
