@@ -11,7 +11,6 @@ namespace The_19_Module.Controllers
 {
     public class PersonController : Controller
     {
-
         #region Private поля и свойства
 
         private readonly IPersonService _personService;
