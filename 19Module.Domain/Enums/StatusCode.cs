@@ -5,10 +5,12 @@
     /// </summary>
     public enum StatusCode
     {
+        Ok = 200,
         PersonNotFound = 0,
         SomeError = 1,
         ICantAddPerson = 2,
         CantEditPerson = 3,
-        Ok = 200,
+        CantDeletePerson = 4,
+
     }
 }

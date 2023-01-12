@@ -19,6 +19,10 @@ namespace The19Module.DAL.Repositories
             _dbContext = dbContext;
         }
 
+        /// <summary>
+        /// Получение всех клиентов
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Person> GetAllPersons()
         {
             List<Person> persons = new List<Person>();
@@ -31,6 +35,11 @@ namespace The19Module.DAL.Repositories
             return persons;
         }
 
+        /// <summary>
+        /// Получение клиента по его Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Person GetById(int id)
         {
 
@@ -42,6 +51,11 @@ namespace The19Module.DAL.Repositories
 
         }
 
+        /// <summary>
+        /// Добавление новго клиента
+        /// </summary>
+        /// <param name="personViewModel"></param>
+        /// <returns></returns>
         public bool Add(PersonViewModel personViewModel)
         {
             Person person = new Person()
@@ -67,6 +81,11 @@ namespace The19Module.DAL.Repositories
             }
         }
 
+        /// <summary>
+        /// Редактирование уже имеющегося клиента
+        /// </summary>
+        /// <param name="personViewModel"></param>
+        /// <returns></returns>
         public bool Edit(PersonViewModel personViewModel)
         {
             try
@@ -91,6 +110,29 @@ namespace The19Module.DAL.Repositories
             }
         }
 
-     
+        /// <summary>
+        /// Удаление уже имеющегося клиента
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool Delete(int Id)
+        {
+            try
+            {
+                Person person = _dbContext.People.Single(i => i.Id == Id);
+
+                _dbContext.People.Remove(person);
+                _dbContext.SaveChanges();
+                _dbContext.Dispose();
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }

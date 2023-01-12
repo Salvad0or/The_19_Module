@@ -50,7 +50,6 @@ namespace The_19_Module.Controllers
 
         #endregion
 
-
         #region Реализация редактирования старого клиента
 
         [HttpGet]
@@ -82,6 +81,26 @@ namespace The_19_Module.Controllers
             return View(personViewModel);
         }
 
+
+        #endregion
+
+        #region Реализация удаления имеющегося клиента
+
+        [HttpPost]
+        public IActionResult DeletePerson(int id)
+        {
+            IBaseResponce<bool> response = _personService.Delete(id);
+
+            if (response.Data is true)
+            {
+                string answer = $"Удаление прошло успешно";
+                                
+
+                return View("SuccessfullView", answer);
+            }
+
+            return View("BaseError", response.Data);
+        }
 
         #endregion
     }

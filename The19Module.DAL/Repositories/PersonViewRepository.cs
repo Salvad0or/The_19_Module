@@ -9,6 +9,9 @@ using The19Module.DAL.Interfaces;
 
 namespace The19Module.DAL.Repositories
 {
+    /// <summary>
+    /// Репозиторий View Person
+    /// </summary>
     public class PersonViewRepository : IPersonViewRepository
     {
         private readonly The19ModuleContext _dbConnext;
@@ -17,6 +20,11 @@ namespace The19Module.DAL.Repositories
             _dbConnext = dbConnext;
         }
 
+        /// <summary>
+        /// получение по Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public PersonViewModel GetById(int id)
         {
             PersonViewModel personViewModel = new PersonViewModel();
@@ -40,6 +48,17 @@ namespace The19Module.DAL.Repositories
 
                 return personViewModel;
             }
+        }
+
+        /// <summary>
+        /// Удаление уже имеющейся вью.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool Delete(int id)
+        {
+            return default;
+            // Пока нет реализации;
         }
     }
 }

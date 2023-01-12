@@ -10,5 +10,7 @@ namespace The19Module.DAL.Interfaces
     {
         T GetById(int id);
 
+        bool Delete(int id);
+
     }
 }

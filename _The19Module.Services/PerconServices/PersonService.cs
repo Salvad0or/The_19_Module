@@ -14,11 +14,11 @@ namespace _The19Module.Services.PerconServices
     /// </summary>
     public class PersonService : IPersonService
     {
-        private readonly IPersonRepository personRepository;
+        private readonly IPersonRepository _personRepository;
 
         public PersonService(IPersonRepository _personRepository)
         {
-            personRepository = _personRepository;
+            this._personRepository = _personRepository;
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace _The19Module.Services.PerconServices
             Responce<IEnumerable<Person>> responce = new Responce<IEnumerable<Person>>();
             try
             {
-                responce.Data = personRepository.GetAllPersons();
+                responce.Data = _personRepository.GetAllPersons();
                 responce.CodeError = StatusCode.Ok;
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace _The19Module.Services.PerconServices
 
             try
             {
-                responce.Data = personRepository.GetById(id);
+                responce.Data = _personRepository.GetById(id);
                 responce.CodeError = StatusCode.Ok;
             }
             catch (Exception ex)
@@ -78,7 +78,7 @@ namespace _The19Module.Services.PerconServices
 
             try
             {
-                responce.Data = personRepository.Add(viewModel);
+                responce.Data = _personRepository.Add(viewModel);
             }
             catch (Exception ex)
             {
@@ -102,7 +102,7 @@ namespace _The19Module.Services.PerconServices
 
             try
             {
-                baseResponce.Data = personRepository.Edit(viewModel);
+                baseResponce.Data = _personRepository.Edit(viewModel);
                 baseResponce.Description = $"Редактирование прошло успешно";
             }
             catch (Exception ex)
@@ -113,6 +113,31 @@ namespace _The19Module.Services.PerconServices
             }
 
             return baseResponce;
+        }
+
+        /// <summary>
+        /// Удаление уже имеющейся персоны прямиком из вью
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public IBaseResponce<bool> Delete(int id)
+        {
+            IBaseResponce<bool> responce = new Responce<bool>();
+
+            try
+            {
+                responce.Data = _personRepository.Delete(id);
+                responce.CodeError = StatusCode.Ok;
+            }
+            catch (Exception ex)
+            {
+                responce.CodeError = StatusCode.CantDeletePerson;
+                responce.Description = $"[Delete] - {ex.Message}";
+                
+            }
+
+            return responce;
         }
     }
 }

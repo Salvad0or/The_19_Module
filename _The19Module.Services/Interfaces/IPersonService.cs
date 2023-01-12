@@ -12,7 +12,7 @@ namespace _The19Module.Services.Interfaces
         IBaseResponce<IEnumerable<Person>> GetAllPersons();
         IBaseResponce<Person> GetPersonById(int id);
         IBaseResponce<bool> AddNewPerson(PersonViewModel viewModel);
-
         IBaseResponce<bool> EditPerson(PersonViewModel viewModel);
+        IBaseResponce<bool> Delete(int id);
     }
 }
