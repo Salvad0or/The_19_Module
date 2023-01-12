@@ -290,3 +290,25 @@ a{
     color: #fff;
     background-color: lightgray;
 }
+
+.home_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: bisque;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+
+.home_p {
+    text-align: center;
+}
+
+.home_links {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    border: 1px solid black;
+}

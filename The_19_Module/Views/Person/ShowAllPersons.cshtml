@@ -21,6 +21,7 @@
                 <th class="main_table_th">Фамилия</th>
                 <th class="main_table_th">Имя</th>
                 <th class="main_table_th">Отчество</th>
+                <th class="main_table_th">Действия</th>
 
             </tr>
 
@@ -34,11 +35,10 @@
                     <td class="main_table_data">@Person.Name</td>
                     <td class="main_table_data">@Person.Patronymic</td>
                     <td class="main_table_data">
-                        <a asp-controller="Person" asp-action="EditPersonById" asp-route-id="@Person.Id">Редактировать</a>
+                        <a asp-controller="Person" asp-action="EditPersonById" asp-route-id="@Person.Id">Редактировать</a> | 
+                        <a asp-controller="Person" asp-action="DeletePerson" asp-route-id="@Person.Id">Удалить</a>       
                     </td>
-                    <td class="main_table_data">
-                        <a asp-controller="Person" asp-action="DeletePerson" asp-route-id="@Person.Id">Удалить</a>
-                    </td>
+                    
 
                 </tr>
             }

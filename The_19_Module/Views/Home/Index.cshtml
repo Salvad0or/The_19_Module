@@ -3,6 +3,24 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="container">
+   <div class="home_row">
+
+       <div class="home">
+            <p class="home_p">Это главная страница. На ней ничего нет да и пока как-то не предвидится</p>
+            <p class="home_p">Для управления используйте кнопки выше</p>
+            <p class="home_p">Или можете использовать эти ссылки : </p>
+
+            <div class="home_links">
+                <p class="home_p"><a asp-action="ShowAllPersons" asp-controller="Person">Список всех клиентов</a></p>
+                <p class="home_p"><a asp-action="AddNewPerson" asp-controller="Person">Добавить нового клиента</a></p>
+            </div>
+            
+       </div>
+
+   </div>
+</div>
+
 
 
 
