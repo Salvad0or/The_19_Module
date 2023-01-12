@@ -28,13 +28,13 @@
             {
                 <tr class="main_table_tr">
                     <td class="main_table_data">
-                        <a asp-controller="SecondPageController1" asp-action="Index" asp-route-id="@Person.Id">#@Person.Id</a>
+                        <a asp-controller="Person" asp-action="ShowPersonById" asp-route-id="@Person.Id">#@Person.Id</a>
                     </td>
                     <td class="main_table_data">@Person.SecondName</td>
                     <td class="main_table_data">@Person.Name</td>
                     <td class="main_table_data">@Person.Patronymic</td>
                     <td class="main_table_data">
-                        <a asp-controller="Person" asp-action="GetPersonById" asp-route-id="@Person.Id">Редактировать</a>
+                        <a asp-controller="Person" asp-action="EditPersonById" asp-route-id="@Person.Id">Редактировать</a>
                     </td>
                     <td class="main_table_data">
                         <a asp-controller="Person" asp-action="DeletePerson" asp-route-id="@Person.Id">Удалить</a>
@@ -45,7 +45,7 @@
 
             <tr class="main_table_tr">
                 <td class="main_table_data">
-                    <a asp-controller="SecondPageController1" asp-action="Index" asp-route-id="@number">#666</a>
+                    <a asp-controller="Person" asp-action="ShowPersonById" asp-route-id="@number">#666</a>
                 </td>
             </tr>
 

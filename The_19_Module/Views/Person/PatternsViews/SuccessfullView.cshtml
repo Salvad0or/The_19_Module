@@ -1,0 +1,15 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Успешное действие";
+}
+
+   <div class="conaner">
+           <div class="success_view_row">
+            <div class="success_view">
+                <p>@Model</p>
+                <a asp-action="Index" asp-controller="Home" class="base_button_from_action">На главную</a>   
+            </div>
+           </div>
+        </div>
+    </div>
+

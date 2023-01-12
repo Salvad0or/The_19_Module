@@ -240,3 +240,53 @@ a{
         background-color: gray;
     }
 
+.success_view_row {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.success_view {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.base_button_from_action {
+    display: block;
+    background-color: gray;
+    text-align: center;
+    padding: 7px;
+    border-radius: 5px;
+    transition: .15s;
+}
+
+    .base_button_from_action:hover {
+        color: #fff;
+        background-color: lightgray;
+    }
+
+
+  .success_view_row{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.success_view {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 15px;
+}
+.base_button_from_action {
+    display: block;
+    background-color: gray;
+    text-align: center;
+    padding:7px;
+    border-radius: 5px;
+    transition: .15s;
+}
+
+.base_button_from_action:hover{
+    color: #fff;
+    background-color: lightgray;
+}

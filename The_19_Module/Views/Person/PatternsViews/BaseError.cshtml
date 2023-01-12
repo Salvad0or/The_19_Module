@@ -1,9 +1,20 @@
 ﻿@model string
 @{
-    ViewData["Title"] = "Error";
-    
+    ViewData["Title"] = "Ошибка";
 }
 
-<div class="container">
-    <p>Произошла ошибка : @Model</p>
+<div class="conaner">
+
+    <div class="success_view_row">
+
+        <div class="success_view">
+
+            <p>Произошла ошибка - @Model</p>
+            <a asp-action="Index" asp-controller="Home" class="base_button_from_action">На главную</a>
+
+        </div>
+
+    </div>
+
 </div>
+    
