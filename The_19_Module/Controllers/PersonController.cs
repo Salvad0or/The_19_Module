@@ -71,7 +71,7 @@ namespace The_19_Module.Controllers
 
                 if (responce.Data is true)
                 {
-                    return View("ICouldAddNewPerson", viewModel.Name);
+                    return View(_pathTSuccessView, $"Клиент {viewModel.Name} был успешно добавлен в базу данных");
                 }
 
             }
